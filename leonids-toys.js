@@ -42,5 +42,6 @@ toys.push(legoSet)
 toys.push(basketball)
 
 for (const toy of toys) {
+    toy.price = toy.price * 1.05;
     console.log(`Our ${toy.name} is ${toy.price} dollars, and is made by ${toy.maker}`)
 }
