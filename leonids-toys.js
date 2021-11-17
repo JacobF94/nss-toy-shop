@@ -41,7 +41,25 @@ toys.push(legoSet)
 
 toys.push(basketball)
 
+const foamSword = {
+    name: "Foam Sword",
+    price: 15,
+    inStock: false,
+    maker: "Walmart"
+}
+
+const addToyToInventory = (toyObject) => {
+    const lastIndex = toys.length - 1
+    const currentLastToy = toys[lastIndex]
+    const maxId = currentLastToy.id
+    const idForNewToy = maxId +1
+
+    toyObject.id = idForNewToy
+    toys.push(toyObject)
+}
+
+addToyToInventory(foamSword)
+
 for (const toy of toys) {
-    toy.price = toy.price * 1.05;
-    console.log(`Our ${toy.name} is ${toy.price} dollars, and is made by ${toy.maker}`)
+    console.log(`Our ${toy.name} is made by ${toy.maker} and costs ${toy.price}`)
 }
